@@ -1,7 +1,6 @@
-@media(min-width: 700px)
-{
+@media(max-width: 700px){
 
-/******* Change Box Model ***************/
+    /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
@@ -10,11 +9,11 @@
 /* design of the entire body portion of the website*/
 
 body{
-  background:
-    linear-gradient(45deg, #8661c1 25%, transparent 25%) -50px -50px/100px 100px,
-    linear-gradient(45deg, #8661c1 25%, transparent 25%) -50px 0/100px 100px,
-    linear-gradient(45deg, transparent 75%, #8661c1 75%) -50px -50px/100px 100px,
-    linear-gradient(45deg, transparent 75%, #8661c1 75%) 0 -50px/100px 100px;
+    background:
+    linear-gradient(45deg, #8661c1 10%, transparent 10%) -5px -5px/20px 20px,
+    linear-gradient(45deg, #8661c1 10%, transparent 10%) -5px 0/20px 20px,
+    linear-gradient(45deg, transparent 90%, #8661c1 90%) -5px -5px/20px 20px,
+    linear-gradient(45deg, transparent 90%, #8661c1 90%) 0 -5px/20px 20px;
   background-color: #FCFBF4;
 }
 
@@ -35,10 +34,6 @@ header{
   align-items: center;
 }
 
-header .siteName{
-  text-decoration: none;
-}
-
 /* Nav bar design */
 
 nav ul{
@@ -48,8 +43,6 @@ nav ul{
   list-style: none;
   background-color: #2E294E;
   color: #FCFBF4;
-  height: 75px;
-  font-size: 1.5rem;
 }
 
 /* nav bar alignment and colors, as well as hover design*/
@@ -79,17 +72,19 @@ nav ul li:hover{
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .heroImageDescription{
   margin: auto;
   position: absolute;
   height: 100%;
-  width: 250px;
+  width: auto;
   display: block;
   padding: 5px;
-  margin-right: 40%;
+  margin-right: 70%;
   background-color: rgba(252, 251, 244, 0.5);
+
 }
 
 .heroImageDescription h2{
@@ -98,7 +93,7 @@ nav ul li:hover{
 
 .heroImageDescription button{
   width: 100%;
-  padding: 10px;
+  padding: 2spx;
   text-align: center;
   border-radius: 25px;
   background-color: #2E294E;
@@ -111,25 +106,8 @@ nav ul li:hover{
 }
 
 
-.heroImage{
-  position: absolute;
-}
-
-/* Aligning Delorean Upgrades and Reviews together*/
-
-.upgradesAndReviews{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-
 /* Design for the Delorean Upgrades section*/
 
-.deloreanUpgrades{
-  display: block;
-  width: 550px;
-}
 
 .deloreanUpgrades h2{
   width: 100%;
@@ -137,35 +115,30 @@ nav ul li:hover{
 }
 
 .deloreanUpgrades ul{
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 10%;
-  grid-column-gap: 10%;
+    display: block;
   list-style: none;
-  position: relative;
+  width: 100%;
 }
 
 .deloreanUpgrades ul li{
-  width: auto;
-  text-align: center;
-  background-color: #2E294E;
-  padding: 5px;
-  position: relative;
-  margin-right: 15%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #2E294E;
+    margin-top: 5%;
 }
 
 .deloreanUpgrades ul li img{
-  background-color: #2E294E;
-  border-radius: 50%;
-  width: 100%;
-  margin-bottom: 10%;
+    text-align: center;
+    margin-left: 5%;
 }
 
 .deloreanUpgrades ul li a{
   color: #FCFBF4;
   margin-bottom: 10%;
   text-decoration: none;
+  margin-right: 10%;
 }
 
 .deloreanUpgrades ul li a:hover{
@@ -184,5 +157,4 @@ nav ul li:hover{
 .dmcDeloreanReviews h2{
   text-align: center;
 }
-
 }
