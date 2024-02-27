@@ -185,4 +185,14 @@ nav ul li:hover{
   text-align: center;
 }
 
+/* ------------------------------------------------------------------------------ */
+
+/* Car Description Design */
+
+.inv-detail-view{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 }

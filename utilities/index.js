@@ -58,4 +58,40 @@ Util.buildClassificationGrid = async function(data){
     return grid
   }
 
+Util.buildInvDetailGrid = async function(data){
+  let grid
+  if(data){
+    grid = '<div class="inv-detail-view">'
+
+      grid += '<div class="image-Section"'
+
+        grid += '<div class="inv-detail-hero-image">'
+        grid += '<img src=' + data[0].inv_image + 'alt="hero image of car selected"' + '/>'
+        grid += '</div>'
+
+        grid += '<div class="inv-detail-thumbnail">'
+        grid += '<img src =' + data[0].thumbnail + 'alt = "thumbnail image of car"' + '/>'
+        grid += '</div>'
+
+      grid += '</div>'
+
+      grid += '<div class="inv-detail-primary">'
+      + "<h3> Model: </h3>" + data[0].invModel
+      + "<h3> Year: </h3>" + data[0].inv_year
+      + "<h3> Miles: </h3>" + data[0].inv_miles
+      + "<h3> Color: </h3>" + data[0].inv_color
+      grid += '</div>'
+
+      grid += '<div class="inv-detail-secondary">'
+      + "<h3> Description: </h3>" + data[0].inv_description
+      + "<h3> Price: </h3>" + "$" +  data[0].inv_price
+      grid += '</div>'
+
+    grid += '</div>'
+  } else {
+    grid += '<p class="notice"> Sorry, but we are unable to find what you are looking for! </p>'
+  }
+  return grid
+}
+
 module.exports = Util
