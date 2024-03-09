@@ -1,3 +1,11 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%# messages() %>
+
 <div className="managementView">
     <h1>Inventory Management</h1>
     <p>Please Click on one of the links below to adjust information</p>

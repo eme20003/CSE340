@@ -61,13 +61,21 @@ async function buildInventory(req, res, next){
         inv_miles, 
         inv_color
     )
-    res.render("inventory/add-classification", {
+    res.render("inventory/add-inventory", {
         title: "Add Inventory",
         nav,
         errors: null,
     })
 }
 
+async function buildManagement(req, res, next){
+    let nav = await utilities.getNav()
+    res.render("inventory/management", {
+        title: "Management",
+        nav,
+        errors: null,
+    })
+}
 
 /* ****************************************
 *  Process Registration
@@ -105,4 +113,66 @@ async function registerAccount(req, res) {
     }
   }
 
-module.exports = {buildLogin, buildRegister, registerAccount, buildClassification, buildInventory}
+  async function registerClassification(req, res) {
+    let nav = await utilities.getNav()
+    const { account_firstname, account_lastname, account_email, account_password } = req.body
+  
+    const regResult = await addClassificationModel.registerAddClassification(
+      classification_name
+    )
+  
+    if (regResult) {
+      req.flash(
+        "notice",
+        `Congratulations, you\'re registered ${classification_name}!`
+      )
+      res.status(201).render("inventory/add-classification", {
+        title: "Classification",
+        nav,
+      })
+    } else {
+      req.flash("notice", "Sorry, the registration failed.")
+      res.status(501).render("inventory/add-classification", {
+        title: "Classification",
+        nav,
+        errors: null,
+      })
+    }
+  }
+
+  async function registerInventory(req, res) {
+    let nav = await utilities.getNav()
+    const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
+  
+    const regResult = await addClassificationModel.registerAddClassification(
+      inv_make, 
+      inv_model, 
+      inv_year, 
+      inv_description, 
+      inv_image, 
+      inv_thumbnail, 
+      inv_price, 
+      inv_miles, 
+      inv_color
+    )
+  
+    if (regResult) {
+      req.flash(
+        "notice",
+        `Congratulations, you\'re registered ${inv_make}!`
+      )
+      res.status(201).render("inventory/add-inventory", {
+        title: "Inventory",
+        nav,
+      })
+    } else {
+      req.flash("notice", "Sorry, the registration failed.")
+      res.status(501).render("ainventory/add-inventory", {
+        title: "Inventory",
+        nav,
+        errors: null,
+      })
+    }
+  }
+
+module.exports = {buildLogin, buildRegister, registerAccount, buildClassification, buildInventory, buildManagement, registerClassification, registerInventory}

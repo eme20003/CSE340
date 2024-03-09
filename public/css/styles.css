@@ -221,4 +221,25 @@ nav ul li:hover{
   align-items: center;
 }
 
+/* Inventory Design */
+
+.addInventoryView{
+  display: block;
+  border: 1px solid red;
+}
+
+#inventoryForm{
+  border: 1px solid red;
+  display: block;
+}
+
+#inventoryForm label{
+  width: 100%;
+}
+
+#inventoryForm input{
+  width: 100%;
+  margin-bottom: 2%;
+}
+
 }
