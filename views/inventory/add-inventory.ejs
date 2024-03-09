@@ -1,0 +1,44 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%# messages() %>
+
+
+<div className="addInventoryView">
+    <form id="inventoryForm" action="/inventory/add-inventory" method="post">
+        <label for="inv_make">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_model">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_year">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_description">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_make">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_image">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_thumbnail">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_price">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_miles">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <label for="inv_color">
+        <input type="text" id="inv_make" name="inv-make">
+
+        <input type="submit" id="inventorySubmitButton" title="Submit">
+    </form>
+</div>

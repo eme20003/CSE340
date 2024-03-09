@@ -22,7 +22,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
 invCont.buildByInvId = async function (req, res, next) {
   const inv_id = req.params.invId
   const data = await invModel.getDetailsById(inv_id)
-  const grid = await utilities.buildInvDetailGrid(data)
+  const grid = await utilities.buildInvDetailGrid()
   let nav = await utilities.getNav()
   const className = data[0].inv_make
   console.log("price: " + data.inv_price)

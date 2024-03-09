@@ -195,4 +195,30 @@ nav ul li:hover{
   align-items: center;
 }
 
+.image-Section{
+  
+  width: 100%;
+}
+
+.inv-detail-hero-image{
+  
+  margin-bottom: 30px;
+}
+
+.inv-detail-thumbnail{
+  
+}
+
+.inv-detail-primary{
+  width: 100%;
+  margin-right: -5%;
+
+}
+
+.inv-detail-primary h3{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 }
