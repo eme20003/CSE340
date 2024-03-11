@@ -5,22 +5,18 @@ const addInventoryModel = require("../models/add-inventory-model")
 
 async function buildLogin(req, res, next){
     let nav = await utilities.getNav()
-    let grid = await utilities.buildAccForm()
     console.log(grid);
     res.render("account/login", {
         title: "Login",
         nav,
-        grid,
     })
 }
 
 async function buildRegister(req, res, next) {
     let nav = await utilities.getNav()
-    let grid = await utilities.buildRegisterForm()
     res.render("account/register", {
       title: "Register",
       nav,
-      grid,
       errors: null,       
     })
   }
@@ -82,7 +78,6 @@ async function buildManagement(req, res, next){
 * *************************************** */
 async function registerAccount(req, res) {
     let nav = await utilities.getNav()
-    let grid = await utilities.buildRegisterForm()
     const { account_firstname, account_lastname, account_email, account_password } = req.body
   
     const regResult = await accountModel.registerAccount(
@@ -100,14 +95,14 @@ async function registerAccount(req, res) {
       res.status(201).render("account/login", {
         title: "Login",
         nav,
-        grid,
+
+
       })
     } else {
       req.flash("notice", "Sorry, the registration failed.")
       res.status(501).render("account/register", {
         title: "Registration",
         nav,
-        grid,
         errors: null,
       })
     }

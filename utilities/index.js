@@ -107,35 +107,6 @@ async function (){
     return grid;
 }
 
-Util.buildRegisterForm = 
-async function (){
-  let grid = '<div class="registerForm">';
-  grid += '<form id="registerForm" action="/account/register" method="post">';
-  grid += '<label for="account_firstname">' + 'First Name:' + '</label>'
-  grid += '<br>';
-  grid += '<input type="text" id="account_firstname" name="account_firstname" required>';
-  grid += '<br>';
-  grid += '<label for="account_lastname">' + 'Last Name:' + '</label>';
-  grid += '<br>';
-  grid += '<input type = "text" id="account_lastname" name="account_lastname required">';
-  grid += '<br>';
-  grid += '<label for="account_email">' + 'Email Address:' + '</label>';
-  grid += '<br>';
-  grid += '<input type = "email" id="account_email" name="account_email required placeholder="Enter a valid email address"">';
-  grid += '<br>';
-  grid += '<label for="account_password">' + 'Password:' + '</label>';
-  grid += '<br>';
-  grid += '<input type = "text" id="account_password" name="account_password required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"">';
-  grid += '<br>';
-  grid += '<input type="submit" id="register_button" title="Register">';
-  /* Sending info to server */
-  grid += '</form>';
-  grid += '<p> Already Have an Account? <a href="/account/login"> Click here to sign in!</a> </p>';
-  grid += '</div>';
-  return grid;
-}
-
-
 
 /* ****************************************
  * Middleware For Handling Errors
