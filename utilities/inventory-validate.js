@@ -5,7 +5,7 @@ const validate = {}
 /*  **********************************
  *  Registration Data Validation Rules
  * ********************************* */
-validate.registationRules = () => {
+validate.inventoryRules = () => {
     return [
       // firstname is required and must be string
       body("inv_make")
@@ -68,15 +68,15 @@ validate.registationRules = () => {
 /* ******************************
  * Check data and return errors or continue to registration
  * ***************************** */
-validate.checkRegData = async (req, res, next) => {
+validate.checkInvData = async (req, res, next) => {
     const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
     let errors = []
     errors = validationResult(req)
     if (!errors.isEmpty()) {
       let nav = await utilities.getNav()
-      res.render("account/register", {
+      res.render("inventory/add-inventory", {
         errors,
-        title: "Registration",
+        title: "Add Inventory",
         nav,
         inv_make, 
         inv_model, 

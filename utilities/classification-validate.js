@@ -3,9 +3,9 @@ const { body, validationResult } = require("express-validator")
 const validate = {}
 
 /*  **********************************
- *  Registration Data Validation Rules
+ *  Classification Data Validation Rules
  * ********************************* */
-validate.registationRules = () => {
+validate.classificationRules = () => {
     return [
       // classification Name is required and must be string
       body("classification_name")
@@ -17,17 +17,17 @@ validate.registationRules = () => {
   }
 
 /* ******************************
- * Check data and return errors or continue to registration
+ * Check data and return errors or continue to add classification
  * ***************************** */
-validate.checkRegData = async (req, res, next) => {
+validate.checkClassificationData = async (req, res, next) => {
     const { classification_name } = req.body
     let errors = []
     errors = validationResult(req)
     if (!errors.isEmpty()) {
       let nav = await utilities.getNav()
-      res.render("account/register", {
+      res.render("inventory/add-classification", {
         errors,
-        title: "Registration",
+        title: "Add Classification",
         nav,
         classification_name,
       })
